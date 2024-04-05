@@ -3,10 +3,16 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 let bookCollections;
+import {disableReactDevTools} from '@fvilers/disable-react-devtools'
+if(process.env.NODE_ENV === 'production ') disableReactDevTools()
+
+
 const { MongoClient, ObjectId } = require('mongodb');
 
 
-app.use(cors());
+app.use(cors(
+ 
+));
 app.use(express.json());
 
 app.get('/', (req, res) => {
