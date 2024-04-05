@@ -73,7 +73,7 @@ app.get("all-book", async(req,res)=>{
 
 app.get("/books/:id", async (req, res) => {
   const id = req.params.id;
-  const filter = { _id: new ObjectId(id) };
+  const filter = { _id : id };
   try {
     const result = await bookCollections.findOne(filter);
     if (!result) {

@@ -19,7 +19,7 @@ function BookCard({headLine,books}) {
   return (
     <div className='my-16 px-4 lg:px-24'>
    <h2 className='text-5xl text-center font-bold text-black my-5'>{headLine}</h2>
-   <div>
+   <div className='mt-12'>
    <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -49,7 +49,7 @@ function BookCard({headLine,books}) {
         <Link to={`/books/${book._id}`}>
             <div>
                 <img src={book.imageURL} alt=''></img>
-                 <div className='bg-blue-600 hover:bg-black p-2 rounded'>
+                 <div className=' absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded'>
                     <FaCartShopping className='w-4 h-4 text-white'/>
                  </div>
             </div>

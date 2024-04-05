@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBarsStaggered, FaBlog, FaXmark }  from "react-icons/fa6";
+import { AuthContext } from '../Context/Authprovider';
 
 function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [isSticky, setSticky] = useState(false);
 
+    const {user} = useContext(AuthContext);
+    console.log(user)
     const toggleMenu = () => { // Corrected the function name
         setMenuOpen(!isMenuOpen);
     }
@@ -50,6 +53,9 @@ function Navbar() {
 
                     <div className='space-x-12 hidden lg:flex items-center'>
                         <button><FaBarsStaggered className='w-5 hover:text-blue-700' /></button>
+                        {
+                           user  ? user.email: ""
+                        }
                     </div>
 
                     <div className='md:hidden'>
