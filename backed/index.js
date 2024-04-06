@@ -10,7 +10,11 @@ if(process.env.NODE_ENV === 'production ') disableReactDevTools()
 const { MongoClient, ObjectId } = require('mongodb');
 
 
-app.use(cors(
+app.use(cors({
+  origin: ["https://deploy-mern-1whq.vercel.app"],
+  methods : ["POST","GET","DELETE","PATCH"],
+  credentials :true,
+}
  
 ));
 app.use(express.json());
